@@ -5,7 +5,7 @@ JAR_NAME=$(basename $BUILD_JAR)
 
 echo "> 현재 시간: $(date)" >> /home/ubuntu/action/deploy.log
 
-echo "> build 파일명: $(JAR_NAME)" >> /home/ubuntu/action/deploy.log
+echo "> build 파일명: $JAR_NAME" >> /home/ubuntu/action/deploy.log
 
 echo "> build 파일 복사" >> /home/ubuntu/action/deploy.log
 DEPLOY_PATH=/home/ubuntu/action/
@@ -18,7 +18,7 @@ if [ -z $CURRENT_PID ]
 then
   echo "> 현재 구동중인 애플리케이션이 없으므로 종료하지 않습니다." >> /home/ubuntu/action/deploy.log
 else
-  echo "> kill -9 $(CURRENT_PID)" >> /home/ubuntu/action/deploy.log
+  echo "> kill -9 $CURRENT_PID" >> /home/ubuntu/action/deploy.log
   sudo kill -9 $CURRENT_PID
   sleep 5
 fi
